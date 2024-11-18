@@ -13,13 +13,56 @@ import Column from "./Column";
 import Editor from "./Editor";
 
 const placeHolderJobs: Job[] = [
-  { id: crypto.randomUUID(), title: "Install HVAC System", customer: "John Doe", description: "Install a new HVAC system in the residential property.", status: JobStatus.InProgress },
-  { id: crypto.randomUUID(), title: "Repair Plumbing Leak", customer: "Jane Smith", description: "Fix the leaking pipe in the kitchen.", status: JobStatus.NotStarted },
-  { id: crypto.randomUUID(), title: "HVAC Maintenance", customer: "Acme Corp", description: "Perform routine maintenance on the HVAC system.", status: JobStatus.Completed },
-  { id: crypto.randomUUID(), title: "Replace Water Heater", customer: "Bob Johnson", description: "Replace the old water heater with a new energy-efficient model.", status: JobStatus.InProgress },
-  { id: crypto.randomUUID(), title: "Unclog Drain", customer: "Alice Brown", description: "Unclog the drain in the bathroom sink.", status: JobStatus.NotStarted },
-  { id: crypto.randomUUID(), title: "Install New Faucet", customer: "Charlie Davis", description: "Install a new faucet in the kitchen.", status: JobStatus.Completed },
-  { id: crypto.randomUUID(), title: "Inspect HVAC System", customer: "Eve Wilson", description: "Inspect the HVAC system for any potential issues.", status: JobStatus.NotStarted },
+  {
+    id: crypto.randomUUID(),
+    title: "Install HVAC System",
+    customer: "John Doe",
+    description: "Install a new HVAC system in the residential property.",
+    status: JobStatus.InProgress,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Repair Plumbing Leak",
+    customer: "Jane Smith",
+    description: "Fix the leaking pipe in the kitchen.",
+    status: JobStatus.NotStarted,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "HVAC Maintenance",
+    customer: "Acme Corp",
+    description: "Perform routine maintenance on the HVAC system.",
+    status: JobStatus.Completed,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Replace Water Heater",
+    customer: "Bob Johnson",
+    description:
+      "Replace the old water heater with a new energy-efficient model.",
+    status: JobStatus.InProgress,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Unclog Drain",
+    customer: "Alice Brown",
+    description: "Unclog the drain in the bathroom sink.",
+    status: JobStatus.NotStarted,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Install New Faucet",
+    customer: "Charlie Davis",
+    description: "Install a new faucet in the kitchen.",
+    status: JobStatus.Completed,
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Inspect HVAC System",
+    customer: "Eve Wilson",
+    description: "Inspect the HVAC system for any potential issues.",
+    status: JobStatus.NotStarted,
+  },
 ];
 
 function App() {
