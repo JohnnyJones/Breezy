@@ -15,7 +15,7 @@ const Board: React.FC = () => {
   const [columns, setColumns] = useState<Column[]>([
     { id: "notstarted", status: JobStatus.NotStarted, jobs: [] },
     { id: "inprogress", status: JobStatus.InProgress, jobs: [] },
-    { id: "notstarted", status: JobStatus.Completed, jobs: [] },
+    { id: "completed", status: JobStatus.Completed, jobs: [] },
   ]);
 
   useEffect(() => {
