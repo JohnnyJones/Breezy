@@ -1,6 +1,6 @@
 # Job Board
 
-This is a sample job-tracking application built with React, TypeScript, and Vite. The application is designed to help HVAC companies manage their jobs using a kanban board interface.
+This is a sample job-tracking application built with Bun, React, TypeScript, Vite, and Tailwind. The application is designed to help HVAC companies manage their jobs using a kanban board interface.
 
 ## Features
 
