@@ -1,9 +1,10 @@
 import './static/index.css';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import Nav from './components/Nav';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <p className="text-red-500">HOME PAGE.</p>
+    <Nav />
   </StrictMode>,
 )
