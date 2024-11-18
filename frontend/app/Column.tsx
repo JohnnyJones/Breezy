@@ -26,15 +26,12 @@ const Column: React.FC<Props> = ({ column, setJobs, handleOpenEditor }) => {
   }));
 
   return (
-    <div
-      ref={drop}
-      className="flex flex-col w-64 bg-gray-200 p-4 rounded shadow"
-    >
-      <div className="flex justify-between items-center mb-4">
+    <div ref={drop} className="flex flex-col w-64 bg-gray-200 rounded shadow">
+      <div className="flex-none w-full bg-green-400 flex justify-between items-center p-4 rounded-t">
         <h2 className="font-bold font-sans text-2xl">{column.status}</h2>
         <ProgressIcon status={column.status} />
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 p-4">
         {column.jobs.map((job) => (
           <Job key={job.id} job={job} handleOpenEditor={handleOpenEditor} />
         ))}
