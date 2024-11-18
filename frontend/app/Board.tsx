@@ -10,6 +10,7 @@ const Board: React.FC = () => {
     { id: "4", title: "My fourth job", status: JobStatus.InProgress },
     { id: "5", title: "My fifth job", status: JobStatus.NotStarted },
     { id: "6", title: "My sixth job", status: JobStatus.Completed },
+    { id: "7", title: "My seventh job", status: JobStatus.NotStarted },
   ]);
 
   const [columns, setColumns] = useState<Column[]>([
@@ -29,7 +30,7 @@ const Board: React.FC = () => {
   return (
     <div className="flex gap-4 p-4">
       {columns.map((column) => (
-        <Column key={column.id} column={column} setColumns={setColumns} />
+        <Column key={column.id} column={column} setJobs={setJobs} />
       ))}
     </div>
   );
