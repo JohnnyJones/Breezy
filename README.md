@@ -65,7 +65,6 @@ This is a sample job-tracking application built with React, TypeScript, and Vite
 
 ### Dev Dependencies
 - `typescript`: TypeScript language support.
-- `eslint`: Linting utility for JavaScript and TypeScript.
 - `tailwindcss`: Utility-first CSS framework.
 - `autoprefixer`: PostCSS plugin to parse CSS and add vendor prefixes.
 - `@vitejs/plugin-react`: Official Vite plugin for React.
