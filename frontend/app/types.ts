@@ -7,8 +7,8 @@ export enum JobStatus {
 export type Job = {
   id: string;
   title: string;
-  // customer: string;
-  // description?: string;
+  customer: string;
+  description?: string;
   status: JobStatus;
 };
 

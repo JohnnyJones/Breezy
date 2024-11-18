@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Job } from "./types";
+import { Job, JobStatus } from "./types";
 
 type Props = {
   job?: Job;
@@ -12,7 +12,7 @@ type Props = {
 const Editor: React.FC<Props> = ({ job, mode, onSave, onClose }) => {
   const [title, setTitle] = useState(job?.title || "");
   const [description, setDescription] = useState(job?.description || "");
-  const [status, setStatus] = useState(job?.status || "todo");
+  const [status, setStatus] = useState(job?.status || JobStatus.NotStarted);
 
   const handleSave = () => {
     const updatedJob: Job = job
@@ -53,9 +53,9 @@ const Editor: React.FC<Props> = ({ job, mode, onSave, onClose }) => {
             onChange={(e) => setStatus(e.target.value)}
             className="w-full mt-1 p-2 border rounded"
           >
-            <option value="todo">To Do</option>
-            <option value="in-progress">In Progress</option>
-            <option value="done">Done</option>
+            <option value={JobStatus.NotStarted}>Not Yet Started</option>
+            <option value={JobStatus.InProgress}>In Progress</option>
+            <option value={JobStatus.Completed}>Completed</option>
           </select>
         </label>
         <div className="flex justify-end gap-2">

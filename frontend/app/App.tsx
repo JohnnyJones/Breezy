@@ -38,13 +38,23 @@ function App() {
   };
 
   const handleSaveJob = (updatedJob: Job) => {
-    // Implement the logic to save the job
-    console.log("Job saved:", updatedJob);
+    setJobs((prevJobs) => {
+      const jobIndex = prevJobs.findIndex((job) => job.id === updatedJob.id);
+      if (jobIndex > -1) {
+        // Update existing job
+        const updatedJobs = [...prevJobs];
+        updatedJobs[jobIndex] = updatedJob;
+        return updatedJobs;
+      } else {
+        // Add new job
+        return [...prevJobs, updatedJob];
+      }
+    });
+    handleCloseEditor();
   };
 
   return (
     <>
-      <h1>MY APP</h1>
       <AddJob handleOpenEditor={handleOpenEditor} />
       <DndProvider backend={HTML5Backend}>
         <Board
@@ -61,7 +71,6 @@ function App() {
           onClose={handleCloseEditor}
         />
       )}
-      <Example />
     </>
   );
 }
