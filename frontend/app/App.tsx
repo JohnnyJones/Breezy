@@ -47,7 +47,11 @@ function App() {
       <h1>MY APP</h1>
       <AddJob handleOpenEditor={handleOpenEditor} />
       <DndProvider backend={HTML5Backend}>
-        <Board jobs={jobs} setJobs={setJobs}/>
+        <Board
+          jobs={jobs}
+          setJobs={setJobs}
+          handleOpenEditor={handleOpenEditor}
+        />
       </DndProvider>
       {isEditorOpen && (
         <Editor

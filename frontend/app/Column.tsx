@@ -6,9 +6,10 @@ import Job from "./Job";
 type Props = {
   column: ColumnType;
   setJobs: React.Dispatch<React.SetStateAction<JobType[]>>;
+  handleOpenEditor: (job?: JobType) => void;
 };
 
-const Column: React.FC<Props> = ({ column, setJobs }) => {
+const Column: React.FC<Props> = ({ column, setJobs, handleOpenEditor }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: "JOB",
     drop: (item: { id: string }) => {
@@ -22,13 +23,16 @@ const Column: React.FC<Props> = ({ column, setJobs }) => {
       isOver: monitor.isOver(),
     }),
   }));
-  
+
   return (
-    <div ref={drop} className="flex flex-col w-64 bg-gray-200 p-4 rounded shadow">
+    <div
+      ref={drop}
+      className="flex flex-col w-64 bg-gray-200 p-4 rounded shadow"
+    >
       <h2 className="font-bold text-lg mb-4">{column.status}</h2>
       <div className="flex flex-col gap-2">
         {column.jobs.map((job) => (
-          <Job key={job.id} job={job} />
+          <Job key={job.id} job={job} handleOpenEditor={handleOpenEditor} />
         ))}
       </div>
     </div>
