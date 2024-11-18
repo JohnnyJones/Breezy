@@ -3,7 +3,7 @@ import React from 'react';
 function Example() {
     return (
         <>
-          <p>THIS IS AN EXAMPLE COMPOENT.</p>
+          <p>THIS IS AN EXAMPLE COMPONENT.</p>
         </>
     )
 }

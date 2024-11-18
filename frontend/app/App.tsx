@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Example from '../components/example.tsx'
+import Example from '../components/Example';
+import Board from './Board';
+import Column from './Column';
+import Job from './Job';
+import { JobStatus } from './types';
 
 function App() {
+   
     return(
         <>
-            <p>APP PAGE!</p>
-            <Example />
+          <h1>MY APP</h1>
+          <Board />
+          <Example />
         </>
     )
 }
