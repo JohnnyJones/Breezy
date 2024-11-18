@@ -25,10 +25,10 @@ const Job: React.FC<Props> = ({ job, handleOpenEditor }) => {
         isDragging ? "opacity-50" : ""
       } ${
         job.status === JobStatus.NotStarted
-        ? "border-gray-500"
+        ? "hover:border-gray-500"
         : job.status === JobStatus.InProgress
-        ? "border-yellow-500"
-        : "border-green-700"
+        ? "hover:border-yellow-500"
+        : "hover:border-green-700"
       }`}
       onClick={() => handleOpenEditor(job)}
     >
