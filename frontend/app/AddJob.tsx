@@ -8,7 +8,7 @@ type Props = {
 const AddJob: React.FC<Props> = ({ handleOpenEditor }) => {
   return (
     <button
-      className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full flex items-center"
+      className="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-full flex items-center"
       onClick={() => handleOpenEditor()}
     >
       Add New Job
