@@ -7,12 +7,13 @@ import ProgressIcon from "./ProgressIcon";
 type Props = {
   job: JobType;
   handleOpenEditor: (job?: JobType) => void;
+  isPlaceholder?: boolean;
 };
 
-const Job: React.FC<Props> = ({ job, handleOpenEditor }) => {
+const Job: React.FC<Props> = ({ job, handleOpenEditor, isPlaceholder }) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "JOB",
-    item: { id: job.id },
+    item: job,
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -22,15 +23,17 @@ const Job: React.FC<Props> = ({ job, handleOpenEditor }) => {
     <div
       ref={drag}
       className={`block max-w-sm p-6 bg-white border-4 rounded-lg shadow bg-gray-800 hover:bg-gray-700 ${
-        isDragging ? "opacity-50" : ""
-      } ${
+        isPlaceholder
+          ? "border-2 border-dashed border-gray-400 bg-gray-100"
+          : "bg-white border-4 bg-gray-800 hover:bg-gray-700"
+      } ${isDragging ? "opacity-50" : ""} ${
         job.status === JobStatus.NotStarted
-        ? "hover:border-gray-500"
-        : job.status === JobStatus.InProgress
-        ? "hover:border-yellow-500"
-        : "hover:border-green-700"
+          ? "hover:border-gray-500"
+          : job.status === JobStatus.InProgress
+          ? "hover:border-yellow-500"
+          : "hover:border-green-700"
       }`}
-      onClick={() => handleOpenEditor(job)}
+      onClick={() => !isPlaceholder && handleOpenEditor(job)}
     >
       {/* <ProgressIcon status={job.status} /> */}
       <h5 className="mb-2 text-xl font-sans font-semibold tracking-tight text-gray-900 dark:text-white">

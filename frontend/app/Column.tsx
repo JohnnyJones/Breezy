@@ -11,9 +11,9 @@ type Props = {
 };
 
 const Column: React.FC<Props> = ({ column, setJobs, handleOpenEditor }) => {
-  const [{ isOver }, drop] = useDrop(() => ({
+  const [{ isOver, item }, drop] = useDrop(() => ({
     accept: "JOB",
-    drop: (item: { id: string }) => {
+    drop: (item: { id: string; title: string; status: string }) => {
       setJobs((prevJobs) =>
         prevJobs.map((job) =>
           job.id === item.id ? { ...job, status: column.status } : job
@@ -22,12 +22,13 @@ const Column: React.FC<Props> = ({ column, setJobs, handleOpenEditor }) => {
     },
     collect: (monitor) => ({
       isOver: monitor.isOver(),
+      item: monitor.getItem(),
     }),
   }));
 
   return (
     <div ref={drop} className="flex flex-col w-64 bg-gray-200 rounded shadow">
-      <div className="flex-none w-full bg-green-400 flex justify-between items-center p-4 rounded-t">
+      <div className="flex-none w-full bg-gray-400 flex justify-between items-center p-4 rounded-t">
         <h2 className="font-bold font-sans text-2xl">{column.status}</h2>
         <ProgressIcon status={column.status} />
       </div>
@@ -35,6 +36,13 @@ const Column: React.FC<Props> = ({ column, setJobs, handleOpenEditor }) => {
         {column.jobs.map((job) => (
           <Job key={job.id} job={job} handleOpenEditor={handleOpenEditor} />
         ))}
+        {isOver && item && item.status !== column.status && (
+          <Job
+            job={{ ...item, status: column.status }}
+            handleOpenEditor={() => undefined}
+            isPlaceholder
+          />
+        )}
       </div>
     </div>
   );
