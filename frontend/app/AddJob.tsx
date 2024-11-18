@@ -12,7 +12,7 @@ const AddJob: React.FC<Props> = ({ handleOpenEditor }) => {
       onClick={() => handleOpenEditor()}
     >
       Add New Job
-      <Plus color="white"/>
+      <Plus color="white" />
     </button>
   );
 };
