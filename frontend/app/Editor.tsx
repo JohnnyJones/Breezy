@@ -12,11 +12,12 @@ type Props = {
 const Editor: React.FC<Props> = ({ job, mode, onSave, onClose }) => {
   const [title, setTitle] = useState(job?.title || "");
   const [description, setDescription] = useState(job?.description || "");
+  const [customer, setCustomer] = useState(job?.customer || "");
   const [status, setStatus] = useState(job?.status || JobStatus.NotStarted);
 
   const handleSave = () => {
     const updatedJob: Job = job
-      ? { ...job, title, description, status } // Update existing job
+      ? { ...job, title, customer, description, status } // Update existing job
       : { id: crypto.randomUUID(), title, description, status }; // Create new job
 
     onSave(updatedJob);
@@ -35,6 +36,15 @@ const Editor: React.FC<Props> = ({ job, mode, onSave, onClose }) => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            className="w-full mt-1 p-2 border rounded"
+          />
+        </label>
+        <label className="block mb-2">
+          <span className="text-sm font-semibold">Customer</span>
+          <input
+            type="text"
+            value={customer}
+            onChange={(e) => setCustomer(e.target.value)}
             className="w-full mt-1 p-2 border rounded"
           />
         </label>
