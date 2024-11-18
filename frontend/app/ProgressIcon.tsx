@@ -6,7 +6,7 @@ import Circle from "./icons/Circle";
 
 enum ProgressColors {
   NotStarted = "gray",
-  InProgress = "yellow",
+  InProgress = "rgb(234 179 8)",
   Completed = "green",
 }
 
