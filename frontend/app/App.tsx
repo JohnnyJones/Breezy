@@ -7,7 +7,7 @@ import { useState } from "react";
 import "../static/index.css";
 import { JobStatus, Job } from "./types";
 import Example from "../components/Example";
-import AddJob from "./AddJob";
+import AddJobButton from "./AddJobButton";
 import Board from "./Board";
 import Column from "./Column";
 import Editor from "./Editor";
@@ -100,7 +100,7 @@ function App() {
 
   return (
     <>
-      <AddJob handleOpenEditor={handleOpenEditor} />
+      <AddJobButton handleOpenEditor={handleOpenEditor} />
       <DndProvider backend={HTML5Backend}>
         <Board
           jobs={jobs}

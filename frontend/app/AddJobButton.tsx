@@ -5,7 +5,7 @@ type Props = {
   handleOpenEditor: () => void;
 };
 
-const AddJob: React.FC<Props> = ({ handleOpenEditor }) => {
+const AddJobButton: React.FC<Props> = ({ handleOpenEditor }) => {
   return (
     <button
       className="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-full shadow flex space-x-2"
@@ -17,4 +17,4 @@ const AddJob: React.FC<Props> = ({ handleOpenEditor }) => {
   );
 };
 
-export default AddJob;
+export default AddJobButton;
