@@ -22,10 +22,10 @@ const Job: React.FC<Props> = ({ job, handleOpenEditor, isPlaceholder }) => {
   return (
     <div
       ref={drag}
-      className={`block max-w-sm p-6 hover:border-4 border-slate-600 rounded-lg shadow bg-slate-600 hover:bg-gray-700 ${
+      className={`block max-w-sm p-6 hover:border-4 border-slate-600 rounded-lg shadow ${
         isPlaceholder
-          ? "border-2 border-dashed border-gray-400 bg-gray-100"
-          : "bg-white border-4 bg-gray-800 hover:bg-gray-700"
+          ? "border-2 border-dashed border-gray-400 opacity-50"
+          : "border-4 bg-slate-600 hover:bg-gray-700 "
       } ${isDragging ? "opacity-50" : ""} ${
         job.status === JobStatus.NotStarted
           ? "hover:border-gray-500"
@@ -40,9 +40,7 @@ const Job: React.FC<Props> = ({ job, handleOpenEditor, isPlaceholder }) => {
         {job.title}
       </h5>
       <p className="font-medium text-lg text-gray-200">{job.customer}</p>
-      <p className="font-normal text-sm text-gray-400">
-        {job.description}
-      </p>
+      <p className="font-normal text-sm text-gray-400">{job.description}</p>
     </div>
   );
 };
