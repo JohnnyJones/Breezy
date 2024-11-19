@@ -27,8 +27,8 @@ const Column: React.FC<Props> = ({ column, setJobs, handleOpenEditor }) => {
   }));
 
   return (
-    <div ref={drop} className="flex flex-col w-64 bg-gray-200 rounded shadow">
-      <div className="flex-none w-full bg-gray-400 flex justify-between items-center p-4 rounded-t">
+    <div ref={drop} className="flex flex-col w-64 bg-gray-200 dark:bg-gray-900 rounded shadow">
+      <div className="flex-none w-full bg-slate-400 flex justify-between items-center p-4 rounded-t shadow">
         <h2 className="font-bold font-sans text-2xl">{column.status}</h2>
         <ProgressIcon status={column.status} />
       </div>

@@ -7,8 +7,10 @@ import Nav from "../components/Nav.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Nav />
-    <div className="container mx-auto p-4">
-      <App />
+    <div className="bg-gradient-to-t from-breezy to-white dark:to-gray-900">
+      <div className="container mx-auto p-4">
+        <App />
+      </div>
     </div>
   </StrictMode>
 );

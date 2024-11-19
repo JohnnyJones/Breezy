@@ -22,7 +22,7 @@ const Job: React.FC<Props> = ({ job, handleOpenEditor, isPlaceholder }) => {
   return (
     <div
       ref={drag}
-      className={`block max-w-sm p-6 bg-white border-4 rounded-lg shadow bg-gray-800 hover:bg-gray-700 ${
+      className={`block max-w-sm p-6 hover:border-4 border-slate-600 rounded-lg shadow bg-slate-600 hover:bg-gray-700 ${
         isPlaceholder
           ? "border-2 border-dashed border-gray-400 bg-gray-100"
           : "bg-white border-4 bg-gray-800 hover:bg-gray-700"
@@ -36,11 +36,11 @@ const Job: React.FC<Props> = ({ job, handleOpenEditor, isPlaceholder }) => {
       onClick={() => !isPlaceholder && handleOpenEditor(job)}
     >
       {/* <ProgressIcon status={job.status} /> */}
-      <h5 className="mb-2 text-xl font-sans font-semibold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="mb-2 text-xl font-sans font-semibold tracking-tight text-white">
         {job.title}
       </h5>
-      <p className="font-medium text-lg text-gray-100">{job.customer}</p>
-      <p className="font-normal text-sm text-gray-700 dark:text-gray-400">
+      <p className="font-medium text-lg text-gray-200">{job.customer}</p>
+      <p className="font-normal text-sm text-gray-400">
         {job.description}
       </p>
     </div>

@@ -7,7 +7,11 @@ export default {
     './app/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'breezy': '#5470ff',
+      },
+    },
   },
   plugins: [],
 }
