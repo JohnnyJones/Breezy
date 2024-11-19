@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Job, JobStatus } from "./types";
+import { v4 as uuidv4 } from "uuid";
 
 type Props = {
   job?: Job;
@@ -18,7 +19,7 @@ const Editor: React.FC<Props> = ({ job, mode, onSave, onClose }) => {
   const handleSave = () => {
     const updatedJob: Job = job
       ? { ...job, title, customer, description, status } // Update existing job
-      : { id: crypto.randomUUID(), title, description, status }; // Create new job
+      : { id: uuidv4(), title, description, status }; // Create new job
 
     onSave(updatedJob);
     onClose();
